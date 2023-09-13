@@ -4,7 +4,8 @@ import del from 'del';
 import {compileStyles, compileMinStyles} from './gulp/compileStyles.mjs';
 import { copy, copyImages, copySvg } from './gulp/copyAssets.mjs';
 import {compileMainMinScripts, compileMainScripts, compileVendorScripts} from './gulp/compileScripts.mjs';
-import {optimizeSvg, sprite, createWebp, optimizePng, optimizeJpg} from './gulp/optimizeImages.mjs';
+import {optimizeSvg, sprite, stackSvg, createWebp, optimizePng, optimizeJpg} from './gulp/optimizeImages.mjs';
+import {processMarkup} from './gulp/compileMarkup.mjs';
 
 const server = browserSync.create();
 const streamStyles = () => compileStyles().pipe(server.stream());
@@ -14,18 +15,20 @@ const clean = () => del('build');
 const syncServer = () => {
   server.init({
     server: 'build/',
-    index: 'sitemap.html',
+    index: 'index.html',
     notify: false,
-    open: true,
+    open: false,
     cors: true,
     ui: false,
   });
 
+  gulp.watch('source/pages/**.html', gulp.series(processMarkup));
+  gulp.watch('source/templates/**.twig', gulp.series(processMarkup));
   gulp.watch('source/**.html', gulp.series(copy, refresh));
   gulp.watch('source/sass/**/*.{scss,sass}', streamStyles);
   gulp.watch('source/js/**/*.{js,json}', gulp.series(compileMainScripts, compileVendorScripts, refresh));
   gulp.watch('source/data/**/*.{js,json}', gulp.series(copy, refresh));
-  gulp.watch('source/img/**/*.svg', gulp.series(copySvg, sprite, refresh));
+  gulp.watch('source/img/**/*.svg', gulp.series(copySvg, sprite, stackSvg, refresh));
   gulp.watch('source/img/**/*.{png,jpg,webp}', gulp.series(copyImages, refresh));
 
   gulp.watch('source/favicon/**', gulp.series(copy, refresh));
@@ -39,8 +42,8 @@ const refresh = (done) => {
   done();
 };
 
-const build = gulp.series(clean, copy, sprite, gulp.parallel(compileMinStyles, compileMainMinScripts, compileVendorScripts, optimizePng, optimizeJpg, optimizeSvg));
-const dev = gulp.series(clean, copy, sprite, gulp.parallel(compileMinStyles, compileMainMinScripts, compileVendorScripts, optimizePng, optimizeJpg, optimizeSvg), syncServer);
-const start = gulp.series(clean, copy, sprite, gulp.parallel(compileStyles, compileMainScripts, compileVendorScripts), syncServer);
+const build = gulp.series(clean, processMarkup, copy, sprite, stackSvg, gulp.parallel(compileMinStyles, compileMainMinScripts, compileVendorScripts, optimizePng, optimizeJpg, optimizeSvg));
+const dev = gulp.series(clean, processMarkup, copy, sprite, stackSvg, gulp.parallel(compileMinStyles, compileMainMinScripts, compileVendorScripts, optimizePng, optimizeJpg, optimizeSvg), syncServer);
+const start = gulp.series(clean, processMarkup, copy, sprite, stackSvg, gulp.parallel(compileStyles, compileMainScripts, compileVendorScripts), syncServer);
 
 export { createWebp as webp, build, start, dev};

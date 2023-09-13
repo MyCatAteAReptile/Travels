@@ -1,0 +1,40 @@
+.heading {
+  position: relative;
+  margin: 0;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 35px;
+
+  &::before {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: max-content;
+    font-size: 55px;
+    line-height: 55px;
+    opacity: 0.03;
+  }
+
+  @include vp-1199 {
+    font-size: 25px;
+    line-height: 25px;
+
+    &::before {
+      bottom: -2px;
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+
+  @include vp-767 {
+    font-size: 22px;
+    line-height: 22px;
+
+    &::before {
+      top: -4px;
+      bottom: auto;
+      font-size: 26px;
+      line-height: 26px;
+    }
+  }
+}

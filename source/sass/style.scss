@@ -3,7 +3,8 @@
 
 @import "vendor/normalize";
 // Swiper 7.4.1
-// @import "vendor/swiper";
+@import "vendor/swiper";
+@import "vendor/leaflet";
 
 // Global
 // ---------------------------------
@@ -19,10 +20,25 @@
 // ---------------------------------
 
 @import "blocks/btn";
-@import "blocks/modal";
+//@import "blocks/modal";
 @import "blocks/custom-input";
 @import "blocks/custom-toggle";
 @import "blocks/custom-select";
+@import "blocks/footer";
+@import "blocks/header";
+@import "blocks/hero";
+@import "blocks/closest-tours";
+@import "blocks/video";
+@import "blocks/heading";
+@import "blocks/education";
+@import "blocks/instructors";
+@import "blocks/secondary-btn";
+@import "blocks/about";
+@import "blocks/reviews";
+@import "blocks/advantages";
+@import "blocks/photo-gallery";
+@import "blocks/feedback";
+@import "blocks/contacts";
 
 // ---------------------------------
 

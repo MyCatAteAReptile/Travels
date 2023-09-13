@@ -1,0 +1,113 @@
+.about {
+  position: relative;
+
+  &__background {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    z-index: -1;
+
+    &--right {
+      top: -140px;
+      right: 0;
+      left: auto;
+    }
+
+    @include vp-1199 {
+      bottom: 99px;
+
+      &--right {
+        display: none;
+      }
+    }
+
+    @include vp-767 {
+      top: 9px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 61px;
+    padding-bottom: 60px;
+
+    @include vp-1199 {
+      padding-top: 45px;
+      padding-bottom: 45px;
+    }
+
+    @include vp-767 {
+      padding-top: 30px;
+      padding-bottom: 36px;
+    }
+  }
+
+  &__content {
+    max-width: calc(41vw - 5px);
+
+    @include vp-1199 {
+      max-width: calc(42vw + 2px);
+    }
+
+    @include vp-767 {
+      max-width: 100%;
+      padding: 428px 0 0;
+    }
+  }
+
+  &__heading {
+    margin: 0 0 56px;
+
+    &::before {
+      content: "О нас";
+    }
+
+    @include vp-1199 {
+      margin: 0 0 35px;
+    }
+
+    @include vp-767 {
+      margin: 0 0 33px;
+    }
+  }
+
+  &__body h3 {
+    margin: 0 0 16px;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 21px;
+
+    @include vp-1199 {
+      margin: 0 0 15px;
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    @include vp-767 {
+      margin: 0 0 16px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+
+  &__body p {
+    margin: 0 0 30px;
+    font-size: 14px;
+    line-height: 22px;
+
+    @include vp-1199 {
+      margin: 0 0 29px;
+    }
+
+    @include vp-767 {
+      margin: 0 0 43px;
+      line-height: 20px;
+    }
+  }
+
+  &__body > *:last-child {
+    margin: 0;
+  }
+}

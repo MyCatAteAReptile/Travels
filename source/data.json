@@ -1,0 +1,52 @@
+{
+	"projectName": "Путешествия",
+	"pages": [
+		{
+			"path": "index.html",
+			"name": "Главная"
+		}
+	],
+	"viewports": {
+		"desktop": null,
+		"tablet": 1199,
+		"mobile": 767
+	},
+	"images": {
+    "caucasus-mountains": {
+      "folder": "hero",
+			"ext": "jpg",
+			"maxdppx": 2,
+			"sizes": [
+        {
+					"viewport": "mobile",
+					"width": 320,
+					"height": 568
+				},
+				{
+					"viewport": "tablet",
+					"width": 768,
+					"height": 1024
+				},
+        {
+					"viewport": "desktop",
+					"width": 1440,
+					"height": 800
+				}
+			]
+		}
+	},
+	"socials": [
+		{
+			"name": "Ссылка на Вконтакте.",
+			"link": "https://vk.com/htmlacademy"
+		},
+		{
+			"name": "Ссылка на Ютуб.",
+			"link": "https://www.youtube.com/user/htmlacademyru"
+		},
+		{
+			"name": "Ссылка на Телеграм.",
+			"link": "https://t.me/htmlacademy"
+		}
+	]
+}

@@ -6,12 +6,19 @@ import svgstore from 'gulp-svgstore';
 import pngQuant from 'imagemin-pngquant';
 import mozJpeg from 'imagemin-mozjpeg';
 import svgo from 'imagemin-svgo';
+import {stacksvg} from 'gulp-stacksvg';
 
 const sprite = () =>
   gulp
       .src('source/img/sprite/*.svg')
       .pipe(svgstore({inlineSvg: true}))
       .pipe(rename('sprite.svg'))
+      .pipe(gulp.dest('build/img'));
+
+const stackSvg = () =>
+  gulp
+      .src('source/img/stack-svg/*.svg')
+      .pipe(stacksvg({output: 'stack'}))
       .pipe(gulp.dest('build/img'));
 
 const optimizeSvg = () =>
@@ -74,4 +81,4 @@ const createWebp = () => {
       .pipe(gulp.dest(`source/img/${root}`));
 };
 
-export {sprite, createWebp, optimizeSvg, optimizePng, optimizeJpg};
+export {sprite, stackSvg, createWebp, optimizeSvg, optimizePng, optimizeJpg};
