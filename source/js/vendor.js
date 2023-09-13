@@ -123,4 +123,3 @@ if (document.querySelector('#map')) {
   createTitleLayers(url).addTo(map);
   createMarker(coordinate, {icon}).addTo(map);
 }
-

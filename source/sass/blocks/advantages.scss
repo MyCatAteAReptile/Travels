@@ -4,6 +4,8 @@
 
   &__heading::before {
     content: "Преимущества";
+    right: 0;
+    margin: 0 auto;
   }
 
   > picture {
@@ -37,11 +39,6 @@
   &__heading {
     margin: 0 0 47px;
     text-align: center;
-
-    &::before {
-      right: 0;
-      margin: 0 auto;
-    }
 
     @include vp-767 {
       margin: 0 0 29px;

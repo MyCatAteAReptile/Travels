@@ -27,7 +27,7 @@
     top: 0;
     height: 100vh;
     width: 100vw;
-    background:#000;
+    background: #000000;
     opacity: 0.5;
     z-index: -1;
   }
@@ -54,7 +54,6 @@
   &__wrapper {
     color: inherit;
     display: flex;
-    //gap: 130px;
     align-items: center;
     position: relative;
     min-height: 62px;
@@ -124,19 +123,11 @@
       border: none;
       outline: none;
     }
-
-    @include vp-767 {
-
-    }
   }
 
   &__nav {
     @include vp-1199 {
       display: none;
-    }
-
-    @include vp-767 {
-
     }
   }
 
@@ -164,14 +155,9 @@
     @include vp-1199 {
       gap: 10px;
     }
-
-    @include vp-767 {
-
-    }
   }
 
   .is-open .header__links {
-
     @include vp-1199 {
       flex-direction: column;
       padding-left: 40px;
@@ -180,7 +166,6 @@
   }
 
   &__links-item {
-
     @include vp-767 {
       margin-bottom: 15px;
       line-height: 14px;

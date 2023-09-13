@@ -1,5 +1,4 @@
 .contacts {
-
   &__heading::before {
     content: "Контакты";
   }
@@ -8,7 +7,6 @@
     display: flex;
     padding-top: 83px;
     padding-bottom: 53px;
-    //padding-bottom: 102px;
     gap: 0 135px;
 
     @include vp-1199 {
