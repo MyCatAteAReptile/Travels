@@ -3513,6 +3513,11 @@ button,
   content: "Ближайшие туры";
 }
 
+.closest-tours__container.container {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .closest-tours__background {
   position: absolute;
   top: -18px;
@@ -4127,6 +4132,8 @@ button,
 .instructors__link svg {
   width: 24px;
   height: 24px;
+  display: block;
+  margin-left: -1px;
 }
 
 .instructors__link:hover:not([disabled]) {
@@ -4830,6 +4837,10 @@ button,
     height: unset;
   }
 
+  .header[data-navigation=is-open] .header__nav-toggle {
+    margin-top: 10px;
+  }
+
   .header__wrapper {
     gap: 0;
     -webkit-box-pack: justify;
@@ -4841,7 +4852,7 @@ button,
 
   .header__logo {
     margin-right: 0;
-    padding-left: 100px;
+    padding-left: 112px;
   }
 
   .header__logo-image {
@@ -4889,7 +4900,7 @@ button,
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     width: 100%;
-    padding-top: 5px;
+    padding-top: 7px;
     max-width: unset;
   }
 
@@ -5571,6 +5582,10 @@ button,
   .header {
     padding-top: 0;
     padding-bottom: 45px;
+  }
+
+  .header[data-navigation=is-open] .header__nav-toggle {
+    margin-top: unset;
   }
 
   .header__wrapper {
