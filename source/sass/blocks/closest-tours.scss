@@ -5,6 +5,11 @@
     content: "Ближайшие туры";
   }
 
+  &__container.container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
   &__background {
     position: absolute;
     top: -18px;
