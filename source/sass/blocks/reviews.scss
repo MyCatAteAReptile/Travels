@@ -75,6 +75,10 @@
     box-shadow: 0 0 30px 0 rgba(28, 51, 116, 0.1);
     gap: 0 30px;
 
+    &.swiper-slide {
+      height: unset;
+    }
+
     picture {
       flex-shrink: 0;
     }

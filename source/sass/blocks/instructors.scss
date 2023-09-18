@@ -150,6 +150,26 @@
     @include vp-767 {
       margin-right: 12px;
     }
+
+    &:hover:not([disabled]) {
+      border-color: $color-elephant;
+    }
+
+    &:focus-within:not([disabled]) {
+      border-color: $color-elephant;
+    }
+
+    &:active:not([disabled]) {
+      color: $color-default-white;
+      background-color: $color-navy-blue;
+      border-color: $color-navy-blue;
+    }
+
+    &[disabled] {
+      color: rgba($color-elephant, 0.3);
+      border-color: rgba($color-elephant, 0.3);
+      pointer-events: none;
+    }
   }
 
   &__text p {

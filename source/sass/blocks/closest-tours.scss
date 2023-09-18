@@ -84,13 +84,19 @@
       cursor: pointer;
       transition: all $trans-default;
 
-      @include hover-focus {
+      &:hover:not([disabled]) {
         color: $color-resolution-blue;
         background-color: $color-default-white;
         border-color: $color-resolution-blue;
       }
 
-      @include active {
+      &:focus-within:not([disabled]) {
+        color: $color-resolution-blue;
+        background-color: $color-default-white;
+        border-color: $color-resolution-blue;
+      }
+
+      &:active:not([disabled]) {
         color: $color-default-white;
         background-color: $color-resolution-blue;
       }
@@ -134,7 +140,12 @@
     justify-content: flex-end;
     min-width: 380px;
     min-height: 412px;
+    flex-grow: 1;
     color: $color-default-white;
+
+    &.swiper-slide {
+      height: unset;
+    }
 
     &::before {
       content: "";
@@ -145,11 +156,14 @@
 
     picture {
       z-index: -2;
+      position: absolute;
+      height: 100%;
+      width: 100%;
     }
 
     img {
       width: 380px;
-      height: 412px;
+      height: 100%;
       object-fit: cover;
     }
 
@@ -169,7 +183,7 @@
   }
 
   &__details {
-    position: absolute;
+    //position: absolute;
     display: flex;
     flex-direction: column;
     padding: 28px 20px;
@@ -383,6 +397,7 @@
     gap: 0 12px;
     outline: none;
     transition: color $trans-default;
+    user-select: none;
 
     @include vp-767 {
       font-size: 14px;

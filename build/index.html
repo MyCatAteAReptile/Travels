@@ -48,7 +48,9 @@
               </li>
             </ul>
           </nav>
-          <a class="header__phone" href="tel:88007253232">8 800 725 32 32</a>
+          <div class="header__phone-wrapper">
+            <a class="header__phone" href="tel:88007253232">8 800 725 32 32</a>
+          </div>
         </div>
       </div>
     </header>
@@ -87,7 +89,7 @@
                     <source media="(max-width: 1199px)" srcset="./img/hero/man-in-mountains-tablet@1x.jpg, ./img/hero/man-in-mountains-tablet@2x.jpg 2x" width="442" height="300">
                     <img src="./img/hero/man-in-mountains-desktop@1x.jpg" srcset="./img/hero/man-in-mountains-desktop@2x.jpg 2x" width="482" height="317" alt="Альпинист на вершине горы.">
                   </picture>
-                  <button class="video__btn" type="button" aria-label="Воспроизвести видео." data-src="9TZXsZItgdw">
+                  <button class="video__btn" type="button" aria-label="Воспроизвести видео.">
                     <svg class="video__icon" width="12" height="22" aria-hidden="true" focusable="false">
                       <use href="./img/sprite.svg#play-video"></use>
                     </svg>
@@ -168,7 +170,7 @@
                     <source type="image/webp" srcset="./img/hero/audio-player-no-play@1x.webp, ./img/hero/audio-player-no-play@2x.webp 2x" width="340" height="220">
                     <img src="./img/hero/audio-player-no-play@1x.png" srcset="./img/hero/audio-player-no-play@2x.png 2x" width="340" height="220" alt="Шаблон аудиоплеера." loading="lazy">
                   </picture>
-                  <button class="hero__audio-btn hero__audio-play" type="button" aria-label="Воспроизвести." data-src="https://music.yandex.ru/iframe/#album/25474374">
+                  <button class="hero__audio-btn hero__audio-play" type="button" aria-label="Воспроизвести.">
                     <svg width="47" height="47" aria-hidden="true" focusable="false">
                       <use href="./img/sprite.svg#play-audio"></use>
                     </svg>
@@ -509,7 +511,7 @@
                     </picture>
                     <div class="instructors__header-container">
                       <h4 class="instructors__header">Александр Прокофьев</h4>
-                      <a class="instructors__link icon-link" href="#!" target="_blank" aria-label="ВКонтакте инструктора.">
+                      <a class="instructors__link" href="#!" target="_blank" aria-label="ВКонтакте инструктора.">
                         <svg width="24" height="24" aria-hidden="true" focusable="false">
                           <use href="./img/sprite.svg#socials-vk-with-frame"></use>
                         </svg>
@@ -530,7 +532,7 @@
                     </picture>
                     <div class="instructors__header-container">
                       <h4 class="instructors__header">Светлана Афиногенова</h4>
-                      <a class="instructors__link icon-link" href="#!" target="_blank" aria-label="ВКонтакте инструктора.">
+                      <a class="instructors__link" href="#!" target="_blank" aria-label="ВКонтакте инструктора.">
                         <svg width="24" height="24" aria-hidden="true" focusable="false">
                           <use href="./img/sprite.svg#socials-vk-with-frame"></use>
                         </svg>
@@ -551,7 +553,7 @@
                     </picture>
                     <div class="instructors__header-container">
                       <h4 class="instructors__header">Надежда Колесниченко</h4>
-                      <a class="instructors__link icon-link" href="#!" target="_blank" aria-label="ВКонтакте инструктора.">
+                      <a class="instructors__link" href="#!" target="_blank" aria-label="ВКонтакте инструктора.">
                         <svg width="24" height="24" aria-hidden="true" focusable="false">
                           <use href="./img/sprite.svg#socials-vk-with-frame"></use>
                         </svg>
@@ -572,7 +574,7 @@
                     </picture>
                     <div class="instructors__header-container">
                       <h4 class="instructors__header">Федор Кайгородов</h4>
-                      <a class="instructors__link icon-link" href="#!" target="_blank" aria-label="ВКонтакте инструктора.">
+                      <a class="instructors__link" href="#!" target="_blank" aria-label="ВКонтакте инструктора.">
                         <svg width="24" height="24" aria-hidden="true" focusable="false">
                           <use href="./img/sprite.svg#socials-vk-with-frame"></use>
                         </svg>
@@ -593,7 +595,7 @@
                     </picture>
                     <div class="instructors__header-container">
                       <h4 class="instructors__header">Александр Прокофьев</h4>
-                      <a class="instructors__link icon-link" href="#!" target="_blank" aria-label="ВКонтакте инструктора.">
+                      <a class="instructors__link" href="#!" target="_blank" aria-label="ВКонтакте инструктора.">
                         <svg width="24" height="24" aria-hidden="true" focusable="false">
                           <use href="./img/sprite.svg#socials-vk-with-frame"></use>
                         </svg>
@@ -1010,11 +1012,9 @@
         <div class="footer__wrapper">
           <div class="footer__wrapper-top">
             <a class = "footer__logo" href="index.html" aria-label="Логотип компании">
-              <picture>
-                <source media="(max-width: 767px)" srcset="img/logo/logo.svg" width="112" height="34">
-                <source media="(max-width: 1199px)" srcset="img/logo/logo.svg" width="118" height="34">
-                <img class="footer__logo-image" src="img/logo/logo.svg" width="205" height="60" alt="Логотип компании.">
-              </picture>
+              <svg class="footer__logo-image" width="205" height="60" aria-hidden="true" focusable="false">
+                <use xlink:href="img/logo/logo.svg#logo"></use>
+              </svg>
             </a>
             <ul class="footer__links">
               <li class="footer__links-item">
@@ -1036,7 +1036,9 @@
                 <a class="footer__links-link" href="#">Контакты</a>
               </li>
             </ul>
-            <a class="footer__phone" href="tel:88007253232">8 800 725 32 32</a>
+            <div class="footer__phone-wrapper">
+              <a class="footer__phone" href="tel:88007253232">8 800 725 32 32</a>
+            </div>
           </div>
           <ul class="footer__socials">
             <li>

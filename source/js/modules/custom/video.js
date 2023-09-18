@@ -1,14 +1,18 @@
 const addVideoPlayer = () => {
-  if (document.querySelector('.video')) {
-    const root = document.querySelector('.video');
-    const button = root.querySelector('button');
-    const iframe = `
-  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${button.dataset.src}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  const videoPlayers = document.querySelectorAll('.hero__video');
+  const iframe = `
+  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9TZXsZItgdw?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   `;
 
-    button.addEventListener('click', () => {
-      root.innerHTML = iframe;
-    }, {once: true});
+  if (videoPlayers.length > 0) {
+    let playerButton = null;
+
+    videoPlayers.forEach((player) => {
+      playerButton = player.querySelector('.video__btn');
+      playerButton.addEventListener('click', () => {
+        player.innerHTML = iframe;
+      }, {once: true});
+    });
   }
   return null;
 };

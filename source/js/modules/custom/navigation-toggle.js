@@ -7,6 +7,7 @@ const addNavigationToggle = () => {
     document.removeEventListener('keydown', onDocumentKeydown);
     document.removeEventListener('click', onDocumentClick);
     navigation.classList.remove('is-open');
+    navigation.removeEventListener('click', onLinkClick);
     toggle.classList.remove('is-open');
     window.scrollLock.enableScrolling();
     header.dataset.navigation = 'is-closed';
@@ -16,6 +17,7 @@ const addNavigationToggle = () => {
     document.addEventListener('keydown', onDocumentKeydown);
     document.addEventListener('click', onDocumentClick);
     navigation.classList.add('is-open');
+    navigation.addEventListener('click', onLinkClick);
     toggle.classList.add('is-open');
     window.scrollLock.disableScrolling();
     header.dataset.navigation = 'is-open';
@@ -27,6 +29,10 @@ const addNavigationToggle = () => {
 
   const onDocumentClick = (evt) => {
     return (evt.target.closest('.header__nav') || evt.target.closest('.header__nav-toggle') ? evt.preventDefault() : closeNavigation());
+  };
+
+  const onLinkClick = (evt) => {
+    return evt.target.matches('.header__links-link') ? closeNavigation() : null;
   };
 
   if (header !== null && toggle !== null && navigation !== null) {

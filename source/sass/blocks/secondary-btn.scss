@@ -10,13 +10,19 @@
   cursor: pointer;
   transition: all $trans-default;
 
-  @include hover-focus {
+  &:hover:not([disabled]) {
     color: $color-resolution-blue;
     background-color: $color-default-white;
     border-color: $color-resolution-blue;
   }
 
-  @include active {
+  &:focus-within:not([disabled]) {
+    color: $color-resolution-blue;
+    background-color: $color-default-white;
+    border-color: $color-resolution-blue;
+  }
+
+  &:active:not([disabled]) {
     color: $color-default-white;
     background-color: $color-resolution-blue;
   }

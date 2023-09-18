@@ -3,11 +3,9 @@
         <div class="footer__wrapper">
           <div class="footer__wrapper-top">
             <a class = "footer__logo" href="index.html" aria-label="Логотип компании">
-              <picture>
-                <source media="(max-width: 767px)" srcset="img/logo/logo.svg" width="112" height="34">
-                <source media="(max-width: 1199px)" srcset="img/logo/logo.svg" width="118" height="34">
-                <img class="footer__logo-image" src="img/logo/logo.svg" width="205" height="60" alt="Логотип компании.">
-              </picture>
+              <svg class="footer__logo-image" width="205" height="60" aria-hidden="true" focusable="false">
+                <use xlink:href="img/logo/logo.svg#logo"></use>
+              </svg>
             </a>
             <ul class="footer__links">
               <li class="footer__links-item">
@@ -29,7 +27,9 @@
                 <a class="footer__links-link" href="#">Контакты</a>
               </li>
             </ul>
-            <a class="footer__phone" href="tel:88007253232">8 800 725 32 32</a>
+            <div class="footer__phone-wrapper">
+              <a class="footer__phone" href="tel:88007253232">8 800 725 32 32</a>
+            </div>
           </div>
           <ul class="footer__socials">
             <li>

@@ -39,6 +39,8 @@
   &__wrapper-top {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
 
     @include vp-1199 {
       padding-bottom: 17px;
@@ -57,6 +59,38 @@
     @include vp-767 {
       margin-left: 5px;
     }
+
+    &:hover:not([disabled]) {
+      color: $color-resolution-blue;
+    }
+
+    &:focus:not([disabled]) {
+      color: $color-resolution-blue;
+    }
+
+    &:active:not([disabled]) {
+      color: $color-navy-blue;
+    }
+
+    &[disabled] {
+      opacity: 0.15;
+      pointer-events: none;
+    }
+  }
+
+  &__logo-image {
+    width: 205px;
+    height: 60px;
+
+    @include vp-1199 {
+      width: 118px;
+      height: 34px;
+    }
+
+    @include vp-767 {
+      width: 112px;
+      height: 34px;
+    }
   }
 
   &__links {
@@ -67,8 +101,10 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-left: 100px;
-    margin-right: 168px;
+    margin-right: 53px;
+    // margin-left: 100px;
+    // //margin-right: 168px;
+    // margin-right: 128px;
 
     @include vp-1199 {
       gap: 15px;
@@ -100,6 +136,7 @@
     line-height: 16px;
     padding: 3px;
     outline: none;
+    user-select: none;
 
     @include vp-1199 {
       font-size: 14px;
@@ -132,15 +169,41 @@
     }
   }
 
+  &__phone-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+    min-width: 142px;
+    margin-left: 10px;
+  }
+
   &__phone {
     color: $color-elephant;
     font-family: $ff-montserrat;
     font-size: 18px;
     font-weight: 600;
     line-height: 18px;
+    outline: none;
 
     @include vp-1199 {
       display: none;
+    }
+
+    &:hover:not([disabled]) {
+      color: $color-resolution-blue;
+    }
+
+    &:focus:not([disabled]) {
+      color: $color-resolution-blue;
+    }
+
+    &:active:not([disabled]) {
+      color: $color-navy-blue;
+    }
+
+    &[disabled] {
+      opacity: 0.15;
+      pointer-events: none;
     }
   }
 
@@ -151,6 +214,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    max-width: 120px;
 
     @include vp-767 {
       margin-left: 5px;

@@ -1,12 +1,17 @@
 .header {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  //padding-top: 40px;
+  //padding-bottom: 40px;
   color: $color-default-white;
   position: relative;
+  box-sizing: border-box;
+  height: 142px;
+  display: flex;
+  align-items: center;
 
   @include vp-1199 {
     padding-top: 0;
     padding-bottom: 0;
+    height: unset;
   }
 
   @include vp-767 {
@@ -39,6 +44,9 @@
   &[data-navigation="is-open"] .header__nav-toggle {
     mask: url("../img/stack.svg#cross") no-repeat center / contain;
     background: $color-elephant;
+    width: 22px;
+    height: 22px;
+    align-self: start;
   }
 
   &[data-navigation="is-open"] .container {
@@ -78,6 +86,7 @@
   &__logo {
     color: $color-default-white;
     margin-right: 135px;
+    outline: none;
 
     @include vp-1199 {
       margin-right: 0;
@@ -86,6 +95,23 @@
 
     @include vp-767 {
       padding-left: 0;
+    }
+
+    &:hover:not([disabled]) {
+      color: $color-resolution-blue;
+    }
+
+    &:focus:not([disabled]) {
+      color: $color-resolution-blue;
+    }
+
+    &:active:not([disabled]) {
+      color: $color-navy-blue;
+    }
+
+    &[disabled] {
+      opacity: 0.15;
+      pointer-events: none;
     }
   }
 
@@ -139,10 +165,11 @@
     color: $color-elephant;
     background: $color-default-white;
     width: 100vw;
-    padding-bottom: 70px;
+    padding-bottom: 67px;
 
     @include vp-767 {
       left: -15px;
+      padding-bottom: 32px;
     }
   }
 
@@ -150,18 +177,33 @@
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
+    row-gap: 5px;
     max-width: 710px;
 
     @include vp-1199 {
       gap: 10px;
+      row-gap: unset;
     }
   }
 
   .is-open .header__links {
     @include vp-1199 {
+      box-sizing: border-box;
       flex-direction: column;
       padding-left: 40px;
       gap: 20px;
+      overflow-y: auto;
+      max-height: 50vh;
+      flex-wrap: nowrap;
+      width: 100%;
+      padding-top: 5px;
+      max-width: unset;
+    }
+
+    @include vp-767 {
+      padding-left: 12px;
+      padding-top: 12px;
+      gap: 1px;
     }
   }
 
@@ -181,10 +223,21 @@
     line-height: 16px;
     padding: 3px;
     outline: none;
+    user-select: none;
 
     @include vp-1199 {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: 0.64px;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    @include vp-767 {
       font-size: 14px;
       line-height: 14px;
+      letter-spacing: 0.56px;
     }
 
     &.disabled {
@@ -219,7 +272,6 @@
     letter-spacing: 0.64px;
     text-transform: uppercase;
 
-
     &.disabled {
       opacity: 0.5;
       pointer-events: none;
@@ -246,13 +298,33 @@
     }
   }
 
+  &__phone-wrapper {
+    margin-left: auto;
+    min-width: 152px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+
+    @include vp-1199 {
+      margin-left: unset;
+      min-width: unset;
+    }
+
+    @include vp-767 {
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+    }
+  }
+
   &__phone {
     color: inherit;
     font-family: $ff-montserrat;
     font-size: 18px;
     font-weight: 600;
     line-height: 18px;
-    margin-left: auto;
+    outline: none;
+    transition: color $trans-default;
 
     @include vp-1199 {
       font-size: 16px;
@@ -265,6 +337,23 @@
       line-height: 14px;
       grid-row: 2 / 3;
       grid-column: 2 / 3;
+    }
+
+    &:hover:not([disabled]) {
+      color: $color-resolution-blue;
+    }
+
+    &:focus:not([disabled]) {
+      color: $color-resolution-blue;
+    }
+
+    &:active:not([disabled]) {
+      color: $color-navy-blue;
+    }
+
+    &[disabled] {
+      opacity: 0.15;
+      pointer-events: none;
     }
   }
 }

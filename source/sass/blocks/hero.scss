@@ -28,7 +28,7 @@
   &__content {
     display: grid;
     align-content: flex-start;
-    padding: 142px 5px 80px 5px;
+    padding: 142px 15px 80px 15px;
     grid-template-columns: 1fr auto;
     width: 100%;
     max-width: 1210px;
@@ -130,6 +130,7 @@
 
     @include vp-767 {
       margin: 0;
+      width: 63%;
     }
   }
 
@@ -263,7 +264,7 @@
     }
   }
 
-  .hero__slider .hero__pagination-button {
+  .hero__slider .hero__pagination-btn {
     width: 10px;
     height: 10px;
     margin: 0;
@@ -278,12 +279,17 @@
       height: 8px;
     }
 
-    @include hover-focus {
+    &:hover {
       background-color: $color-default-white;
       opacity: 0.4;
     }
 
-    @include active {
+    &:focus {
+      background-color: $color-default-white;
+      opacity: 0.4;
+    }
+
+    &:active {
       opacity: 0.7;
     }
   }
