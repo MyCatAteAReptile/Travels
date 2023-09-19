@@ -12,6 +12,10 @@ const isMobile = () => {
   return /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone|Opera Mini/i.test(navigator.userAgent);
 };
 
+const isTouchDevice = () => {
+  return !!('ontouchstart' in window);
+};
+
 export const heroSlider = new Swiper('.hero__slider', {
   loop: true,
   pagination: {
@@ -50,7 +54,7 @@ initialNotActiveSlides.forEach((slide) => {
 });
 
 heroSlider.on('touchStart', () => {
-  if (!isMobile()) {
+  if (!isMobile() || !isTouchDevice()) {
     heroSlider.allowTouchMove = false;
   } else {
     heroSlider.allowTouchMove = true;
