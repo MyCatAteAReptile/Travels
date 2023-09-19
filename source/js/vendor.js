@@ -27,24 +27,6 @@ export const heroSlider = new Swiper('.hero__slider', {
   },
 });
 
-// const heroDublicateSlides =
-//   document.querySelector('hero__list').querySelectorAll('.swiper-slide-duplicate, .swiper-slide-duplicate-prev, .swiper-slide-duplicate-next');
-
-// heroDublicateSlides.forEach((slide) => {
-//   let slideElements = slide.querySelectorAll('a, button');
-//   slideElements.forEach((e) => {
-//     e.tabindex = -1;
-//   });
-// });
-
-// let notActiveSlides = document.querySelectorAll('.hero__item:not(.swiper-slide-active)');
-// notActiveSlides.forEach((slide) => {
-//   let slideElements = slide.querySelectorAll('button, a');
-//   slideElements.forEach((e) => {
-//     e.tabindex = -1;
-//   });
-// });
-
 let initialNotActiveSlides = document.querySelectorAll('.hero__item:not(.swiper-slide-active)');
 initialNotActiveSlides.forEach((slide) => {
   let slideElements = slide.querySelectorAll('button, a');
@@ -59,7 +41,7 @@ heroSlider.on('touchStart', () => {
   } else {
     heroSlider.allowTouchMove = true;
   }
-}); // realIndex
+});
 
 heroSlider.on('slideChange', () => {
   const videoPlayers = document.querySelectorAll('.hero__video');
