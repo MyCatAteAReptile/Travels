@@ -143,7 +143,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-width: 380px;
+    min-width: 370px;
     min-height: 412px;
     flex-grow: 1;
     color: $color-default-white;
@@ -191,7 +191,9 @@
     //position: absolute;
     display: flex;
     flex-direction: column;
-    padding: 28px 20px;
+    padding: 28px 0;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   &__name {

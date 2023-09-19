@@ -3621,7 +3621,7 @@ button,
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  min-width: 380px;
+  min-width: 370px;
   min-height: 412px;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
@@ -3662,7 +3662,9 @@ button,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 28px 20px;
+  padding: 28px 0;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .closest-tours__name {
